@@ -40,10 +40,10 @@ update:
 $(docdir):
 	./update.sh
 
-vimhelp.tex vimhelp-a4.tex vimhelp-ipad.tex: preamble.tex
+vimhelp.tex vimhelp-a4.tex vimhelp-ipad.tex: final_preamble.tex
 
-preamble.tex: FORCE
-	sed -i -e '/^\\usepackage{fontspec}/ {n;N;s/.*/$(subst_text)/}' preamble.tex
+final_preamble.tex: preamble.tex
+	sed -e '/^\\usepackage{fontspec}/ {n;N;s/.*/$(subst_text)/}' preamble.tex > final_preamble.tex
 
 %.pdf: %.tex body.tex FORCE
 	xelatex $<

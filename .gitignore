@@ -10,3 +10,4 @@ vim_faq/
 body.tex
 *.fdb_latexmk
 *.fls
+final_preamble.tex
